@@ -35,7 +35,7 @@
    - Create a `.env` file in the root directory.
    - Add the following environment variables:
      ```
-     OLLAMA_API_URL=
+     OLLAMA_API_ENDPOINT=
      OLLAMA_MODEL=
      AI_PROMPT_OBIT_DATE_IDENTIFIER=
      ```

@@ -1,11 +1,13 @@
 import axios from 'axios';
 
+
 export async function extractUsingAI(prompt, context) {
     try {
+        const OLLAMA_API_ENDPOINT = process.env.OLLAMA_API_ENDPOINT || 'http://localhost:11434';
         console.log('Calling Ollama API to extract data...');
 
-        const response = await axios.post(process.env.OLLAMA_API_URL, {
-            model: process.env.OLLAMA_MODEL,
+        const response = await axios.post(`${OLLAMA_API_ENDPOINT}/api/generate`, {
+            model: process.env.OLLAMA_MODEL || 'llama2',
             stream: false,
             prompt: prompt + `<input> ${context} </input>`,
         });

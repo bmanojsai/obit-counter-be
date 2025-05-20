@@ -32,7 +32,7 @@ router.post("/obituaries/count", async (req, res) => {
     if (!url) throw new Error("URL is required");
     if (!nextPageIdentifier) throw new Error("Next page identifier is required");
 
-    browser = await openNewBrowser(false);
+    browser = await openNewBrowser();
     const page = await openNewPage(browser, url);
 
     uniqueObitDateIdentifier =
